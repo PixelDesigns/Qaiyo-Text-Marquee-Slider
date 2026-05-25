@@ -1,0 +1,17 @@
+<wpml-config>
+    <custom-types>
+        <custom-type translate="1">qtms_slider</custom-type>
+    </custom-types>
+    <taxonomies>
+        <taxonomy translate="1">qtms_category</taxonomy>
+    </taxonomies>
+    <custom-fields>
+        <custom-field style="translate">_qtms_rows</custom-field>
+        <custom-field style="copy">_qtms_row_count</custom-field>
+        <custom-field style="copy">_qtms_row_gap</custom-field>
+        <custom-field style="copy">_qtms_fade_width</custom-field>
+        <custom-field style="copy">_qtms_font_size</custom-field>
+        <custom-field style="copy">_qtms_bg_color</custom-field>
+        <custom-field style="copy">_qtms_schema</custom-field>
+    </custom-fields>
+</wpml-config>

@@ -1,0 +1,142 @@
+/* Qaiyo Marquee Slider — Frontend */
+
+.qtms-marquee {
+    display: flex;
+    flex-direction: column;
+    gap: var(--qtms-row-gap, 20px);
+    background: var(--qtms-bg, transparent);
+    overflow: hidden;
+    width: 100%;
+
+}
+
+.qtms-row {
+    position: relative;
+    overflow: hidden;
+    padding: 0.15em 0;
+    -webkit-mask-image: linear-gradient(
+        to right,
+        transparent,
+        black var(--qtms-fade, 80px),
+        black calc(100% - var(--qtms-fade, 80px)),
+        transparent
+    );
+    mask-image: linear-gradient(
+        to right,
+        transparent,
+        black var(--qtms-fade, 80px),
+        black calc(100% - var(--qtms-fade, 80px)),
+        transparent
+    );
+}
+
+.qtms-track {
+    display: flex;
+    gap: 0;
+    width: max-content;
+    will-change: transform;
+}
+
+.qtms-track.qtms-animate {
+    animation: qtms-scroll linear infinite;
+}
+
+.qtms-row:hover .qtms-track {
+    animation-play-state: paused;
+}
+
+.qtms-track-copy {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    padding-inline-start: 0 !important;
+    margin-inline-start: 0 !important;
+    line-height: 1.4 !important;
+}
+
+.qtms-track-copy::before,
+.qtms-track-copy::after {
+    display: none !important;
+    content: none !important;
+}
+
+@keyframes qtms-scroll {
+    from {
+        transform: translateX(var(--qtms-from, 0));
+    }
+    to {
+        transform: translateX(var(--qtms-to, -50%));
+    }
+}
+
+.qtms-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    /* margin-right = gap between badges; padding auto from font-size via em */
+    margin: 0 var(--qtms-spacing, 40px) 0 0 !important;
+    padding: 0.5em 1em !important;
+    white-space: nowrap;
+    flex-shrink: 0;
+    list-style: none !important;
+    line-height: 1.4 !important;
+    min-height: 1.4em;
+    box-sizing: border-box !important;
+}
+
+.qtms-item::before,
+.qtms-item::after {
+    display: none !important;
+    content: none !important;
+}
+
+.qtms-separator::before,
+.qtms-separator::after {
+    display: none !important;
+    content: none !important;
+}
+
+.qtms-text {
+    font-size: inherit;
+    font-weight: 500;
+    text-decoration: none;
+    transition: opacity 0.15s;
+}
+
+a.qtms-text:hover {
+    opacity: 0.75;
+}
+
+.qtms-icon {
+    flex-shrink: 0;
+    width: 1em;
+    height: 1em;
+    object-fit: contain;
+    vertical-align: middle;
+}
+
+.qtms-separator {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin: 0 4px !important;
+    padding: 0 !important;
+    list-style: none !important;
+}
+
+.qtms-separator img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .qtms-track {
+        animation: none !important;
+    }
+}
