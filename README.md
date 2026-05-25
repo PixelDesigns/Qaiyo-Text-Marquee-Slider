@@ -3,9 +3,13 @@
 WordPress shortcode plugin for infinite scrolling text marquees with per-row control, badge-style elements, font detection, and full page builder compatibility.
 
 **Version:** 1.0
+
 **Author:** Qaiyo by PixelDesigns
+
 **License:** GPL-2.0-or-later
+
 **Requires:** WordPress 5.8+, PHP 7.4+
+
 **Slug:** qaiyo-text-marquee-slider
 
 ---
@@ -43,3 +47,4 @@ Place `[qaiyo_text_marquee id="..."]` anywhere on your site. Each marquee suppor
 5. Paste `[qaiyo_text_marquee id="..."]` wherever you want it
 
 ## Shortcode
+[qaiyo_text_marquee id="..."]
